@@ -34,7 +34,6 @@ export class AppComponent       {
 ]; 
  
 changeText = false;
-resizing = true;
 
   dropItem(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -57,30 +56,15 @@ clicked(i)
   console.log(i);
 
 }
-  onResized(event: ResizedEvent,index) {
-   
-/*     console.log(this.changeText);
-console.log(event.newWidth-event.oldWidth)
-let oldWidth=event.oldWidth==undefined?0:event.oldWidth;
-   if(this.changeText && event.newWidth-oldWidth<100)
+  onResized(event: ResizedEvent,i) {
+     console.log(this.changeText);
+/*console.log()
+   if(this.changeText &&( event.newWidth-event.oldWidth<25 ))
      {
         this.projectFields[i].width = event.newWidth; 
-       //this.changeText=false;
-    }
-    */
-
-   for(var i=0; i<=this.groups.length; i++)  {
-    
-     for(var j=0; j<this.projectFields.length;j++){
-     // document.querySelector("#col-"+i+"-"+j).removeEventListener("resized", this.onResized, true);
-   
-     }
-   } 
-   
-    
-   this.projectFields[index].width= event.newWidth;
-    
+    }*/
+     
   }
-}
   
  
+}
