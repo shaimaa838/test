@@ -8,7 +8,7 @@
         >
           
         
-        <div  [attr.id]="j" class="header-box"    (click)="clicked(i)"  *ngFor="let field of projectFields; let j= index" [ngStyle]="{'width.px':field.width}"  cdkDrag   class="res">
+        <div  [attr.id]="j" class="header-box"    (click)="clicked(i)"  (resized)="onResized($event,j)"  (mouseup)="fn_mouseUp($event)"   (mousedown)="fn_mouseDown($event)"  *ngFor="let field of projectFields; let j= index" [ngStyle]="{'width.px':field.width}"  cdkDrag   class="res">
 
             <div  cdkDragHandle style="float:left;cursor:move;width:20px">
               <img  width = "20" src = "../assets/images/drag.png"/>
