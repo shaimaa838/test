@@ -56,19 +56,19 @@ clicked(e,i,j)
 {
  // this.currnetActiveDivX=i;
 //this.currnetActiveDivY=j;
-console.log("Current Active x ", i)
-console.log("Current Active y",j)
+//console.log("Current Active x ", i)
+//console.log("Current Active y",j)
  // e.stopPropagation();
 }
   onResized(event,i,j) {
-   console.log("i",i)
-   console.log("j",j)
+   //console.log("i",i)
+   //console.log("j",j)
      //event.stopPropagation();
     // event.stopImmediatePropagation();
     console.log(this.currnetActiveDivX,this.currnetActiveDivY)
    if(this.currnetActiveDivX==i && this.currnetActiveDivY==j)
      {
-       console.log("this.projectFields[i].width",this.projectFields[i].width)
+       //console.log("this.projectFields[i].width",this.projectFields[i].width)
         this.projectFields[i].width = event.newWidth; 
     }
      
