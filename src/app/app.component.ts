@@ -50,20 +50,44 @@ changeText = false;
   }
   width: number;
   height: number;
- 
-clicked(i)
+ currnetActiveDivX:number;
+ currnetActiveDivY:number;
+clicked(e,i,j)
 {
-  console.log(i);
-
+ // this.currnetActiveDivX=i;
+//this.currnetActiveDivY=j;
+console.log("Current Active x ", i)
+console.log("Current Active y",j)
+ // e.stopPropagation();
 }
-  onResized(event: ResizedEvent,i) {
-     console.log(this.changeText);
-/*console.log()
-   if(this.changeText &&( event.newWidth-event.oldWidth<25 ))
+  onResized(event,i,j) {
+   console.log("i",i)
+   console.log("j",j)
+     //event.stopPropagation();
+    // event.stopImmediatePropagation();
+    console.log(this.currnetActiveDivX,this.currnetActiveDivY)
+   if(this.currnetActiveDivX==i && this.currnetActiveDivY==j)
      {
+       console.log("this.projectFields[i].width",this.projectFields[i].width)
         this.projectFields[i].width = event.newWidth; 
-    }*/
+    }
      
+  }
+  fn_mouseUp(e,i,j)
+  {
+    e.stopPropagation();
+    this.currnetActiveDivX=undefined;
+    this.currnetActiveDivY=undefined;
+
+  }
+  fn_mouseDown(e,i,j)
+  {
+    this.currnetActiveDivX=i;
+    this.currnetActiveDivY=j;
+    e.stopPropagation();
+
+    
+    
   }
   
  
