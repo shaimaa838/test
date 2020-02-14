@@ -1,14 +1,14 @@
 
   <div cdkDropListGroup>
-    <div class="group-container"   *ngFor="let group of groups; let i = index">
+    <div class="group-container"   *ngFor="let group of groups; let i = index" (mouseup)="fn_mouseUp($event,i,j)">
       <h2>{{group.name}}</h2>
         
-        <div cdkDropList cdkDropListOrientation="horizontal" class="header-list" (cdkDropListDropped)="headerDrop($event)" 
+        <div cdkDropList cdkDropListOrientation="horizontal" class="header-list" (cdkDropListDropped)="headerDrop($event)"  
         class="col-header"
         >
           
         
-        <div  [attr.id]="j" class="header-box"    (click)="clicked(i)"  *ngFor="let field of projectFields; let j= index" [ngStyle]="{'width.px':field.width}"  cdkDrag   class="res">
+        <div  [attr.id]="j" class="header-box"    (resized)="onResized($event,i,j)"      (mousedown)="fn_mouseDown($event,i,j)"  (mouseup)="fn_mouseUp($event,i,j)" *ngFor="let field of projectFields; let j= index" [ngStyle]="{'width.px':field.width}"  cdkDrag   class="res">
 
             <div  cdkDragHandle style="float:left;cursor:move;width:20px">
               <img  width = "20" src = "../assets/images/drag.png"/>
